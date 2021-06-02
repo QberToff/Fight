@@ -1,0 +1,13 @@
+C:\Users\STAS\source\repos\Fight\Fight\bin\Debug\netcoreapp3.1\Fight.exe
+C:\Users\STAS\source\repos\Fight\Fight\bin\Debug\netcoreapp3.1\Fight.deps.json
+C:\Users\STAS\source\repos\Fight\Fight\bin\Debug\netcoreapp3.1\Fight.runtimeconfig.json
+C:\Users\STAS\source\repos\Fight\Fight\bin\Debug\netcoreapp3.1\Fight.runtimeconfig.dev.json
+C:\Users\STAS\source\repos\Fight\Fight\bin\Debug\netcoreapp3.1\Fight.dll
+C:\Users\STAS\source\repos\Fight\Fight\bin\Debug\netcoreapp3.1\Fight.pdb
+C:\Users\STAS\source\repos\Fight\Fight\obj\Debug\netcoreapp3.1\Fight.csprojAssemblyReference.cache
+C:\Users\STAS\source\repos\Fight\Fight\obj\Debug\netcoreapp3.1\Fight.AssemblyInfoInputs.cache
+C:\Users\STAS\source\repos\Fight\Fight\obj\Debug\netcoreapp3.1\Fight.AssemblyInfo.cs
+C:\Users\STAS\source\repos\Fight\Fight\obj\Debug\netcoreapp3.1\Fight.csproj.CoreCompileInputs.cache
+C:\Users\STAS\source\repos\Fight\Fight\obj\Debug\netcoreapp3.1\Fight.dll
+C:\Users\STAS\source\repos\Fight\Fight\obj\Debug\netcoreapp3.1\Fight.pdb
+C:\Users\STAS\source\repos\Fight\Fight\obj\Debug\netcoreapp3.1\Fight.genruntimeconfig.cache
