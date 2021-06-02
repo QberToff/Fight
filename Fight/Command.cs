@@ -39,6 +39,7 @@ namespace Fight
         public override void Reset()
         {
            Health.Health += Attacker.Damage;
+            Attacker.ReadyForAttack = true;
         }
 
         //public override void SetData(IUnitHealth data)
