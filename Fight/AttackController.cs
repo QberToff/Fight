@@ -21,7 +21,22 @@ namespace Fight
         {
             while (FirstTeam.Counter > 0 || SecondTeam.Counter > 0)
             {
-                //TODO 
+                var coin = new Random().Next(0, 1);
+                Unit a;
+                Unit b;
+
+                if (coin == 0)
+                {
+                    a = FirstTeam.GetUnitFromTeam(new Random().Next(0, FirstTeam.Counter));
+                    b = SecondTeam.GetUnitFromTeam(new Random().Next(0, SecondTeam.Counter));
+                }
+                else
+                {
+                    a = SecondTeam.GetUnitFromTeam(new Random().Next(0, SecondTeam.Counter));
+                    b = FirstTeam.GetUnitFromTeam(new Random().Next(0, FirstTeam.Counter));
+                }
+
+                undoredo.RegisterCommnad(new Attack(a,b));
             }
         }
 
