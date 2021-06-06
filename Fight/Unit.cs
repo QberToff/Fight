@@ -4,20 +4,21 @@ using System.Text;
 
 namespace Fight
 {
-    public class Unit : IUnitHealth, IUnitAttackData
+    public class Unit : IUnitHealth, IUnitAttackData, IUpdate
     {
         
-       public string Name { get; private set; } 
+       public string Name { get;  set; } 
         public int Damage { get; set; }
        
         public int Health { get; set; }
 
-        public int AttackInterval { get; private set; }
+        public int AttackInterval { get; private set; } 
 
         public bool Alive { get; set; }
 
-        public bool ReadyForAttack { get; set; }
-       
+        public bool ReadyForAttack { get; set; } =  true;
+
+
         private int frames;
        
 

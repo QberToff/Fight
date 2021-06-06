@@ -31,6 +31,7 @@ namespace Fight
             {
                 Health.Health -= Attacker.Damage;
                 Attacker.ReadyForAttack = false;
+                Console.WriteLine("Unit " + Attacker.Name  + " attacked unit " + Health.Name );
             }
             
             

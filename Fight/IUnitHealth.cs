@@ -8,11 +8,13 @@ namespace Fight
     {
         public int Health { get; set; }
 
+        public string Name { get; set; }
 
     }
 
     public interface IUnitAttackData
-    {        
+    {
+        public string Name { get; set; }
         public int Damage { get; set; }
 
         public bool ReadyForAttack { get; set; }

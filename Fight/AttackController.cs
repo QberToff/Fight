@@ -9,35 +9,56 @@ namespace Fight
         private UndoRedoImplementation undoredo;
         private Team FirstTeam;
         private Team SecondTeam;
+        private World world;
+        private int coin;
 
-        public AttackController(UndoRedoImplementation undoredo, Team A, Team B)
+        public AttackController(UndoRedoImplementation undoredo, Team A, Team B, World world)
         {
             this.undoredo = undoredo;
             FirstTeam = A;
             SecondTeam = B;
+            this.world = world;
         }
 
         public void ProcessFight()
         {
-            while (FirstTeam.Counter > 0 || SecondTeam.Counter > 0)
+            bool isFighting = true;
+            
+            while (isFighting)
             {
-                var coin = new Random().Next(0, 1);
+                world.Update();
+                coin = new Random().Next(0, 2);
                 Unit a;
                 Unit b;
 
-                if (coin == 0)
+                if (FirstTeam.Alive && SecondTeam.Alive)
                 {
-                    a = FirstTeam.GetUnitFromTeam(new Random().Next(0, FirstTeam.Counter));
-                    b = SecondTeam.GetUnitFromTeam(new Random().Next(0, SecondTeam.Counter));
+                    if (coin == 0)
+                    {
+                        a = FirstTeam.GetUnitFromTeam(new Random().Next(0, FirstTeam.Counter));
+                        b = SecondTeam.GetUnitFromTeam(new Random().Next(0, SecondTeam.Counter));
+                    }
+                    else
+                    {
+                        a = SecondTeam.GetUnitFromTeam(new Random().Next(0, SecondTeam.Counter));
+                        b = FirstTeam.GetUnitFromTeam(new Random().Next(0, FirstTeam.Counter));
+                    }
+
+                    undoredo.RegisterCommnad(new Attack(a, b));
                 }
                 else
-                {
-                    a = SecondTeam.GetUnitFromTeam(new Random().Next(0, SecondTeam.Counter));
-                    b = FirstTeam.GetUnitFromTeam(new Random().Next(0, FirstTeam.Counter));
-                }
-
-                undoredo.RegisterCommnad(new Attack(a,b));
+                    isFighting = false;
+                
+                
             }
+            Console.WriteLine("Fight ended!");
+
+            if (!FirstTeam.Alive)
+            {
+                Console.WriteLine(SecondTeam.Name + " has won");
+            }
+            else
+                Console.WriteLine(FirstTeam.Name + " has won");
         }
 
 

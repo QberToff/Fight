@@ -6,23 +6,21 @@ namespace Fight
 {
     class World
     {
-        private List<Unit> worldUnits = new List<Unit>();
+        private List<IUpdate> elements = new List<IUpdate>();
 
-        public void AddUnit(Unit unit)
+        public void AddElement(IUpdate elenent)
         {
-            worldUnits.Add(unit);
+            elements.Add(elenent);
         }
 
         public void Update()
         {
-
-            while (true)
-            {
-                foreach (var un in worldUnits)
+           
+           foreach (var el in elements)
                 {
-                    un.Update();
-                }
-            }
+                    el.Update();
+                }  
+            
 
             
             
