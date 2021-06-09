@@ -35,13 +35,20 @@ namespace Fight
         }
         public void Update()
         {
-            frames++;
+           
             if(frames == AttackInterval)
             {
                 ReadyForAttack = true;
                 frames = 0;
             }
             IsUnitDead();
+            frames++;
+
+        }
+
+        public void LateUpdate()
+        {
+            //frames++;
         }
     
         

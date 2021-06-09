@@ -9,11 +9,13 @@ namespace Fight
 
         Stack<Command> undo;
         Stack<Command> redo;
+        List<Command> allComands;
 
         public UndoRedoImplementation()
         {
              undo = new Stack<Command>();
              redo = new Stack<Command>();
+            allComands = new List<Command>();
         }
 
         public void RegisterCommnad(Command c)
@@ -21,6 +23,7 @@ namespace Fight
             redo.Clear();
             undo.Push(c);
             c.Apply();
+            allComands.Add(c);
 
         }
 

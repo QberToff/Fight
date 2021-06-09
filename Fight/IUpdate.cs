@@ -8,5 +8,7 @@ namespace Fight
     {
         public void Update();
 
+        public void LateUpdate();
+
     }
 }

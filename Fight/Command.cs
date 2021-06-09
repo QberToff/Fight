@@ -10,7 +10,7 @@ namespace Fight
         public abstract void Reset();
         
         
-        //public abstract void SetData(IUnitHealth data);
+        
 
     }
 
@@ -31,7 +31,13 @@ namespace Fight
             {
                 Health.Health -= Attacker.Damage;
                 Attacker.ReadyForAttack = false;
-                Console.WriteLine("Unit " + Attacker.Name  + " attacked unit " + Health.Name );
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("     " + "Unit " + Attacker.Name  + " attacked unit " + Health.Name );
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("     " + "Unit " + Attacker.Name + " can't attack");
             }
             
             
@@ -43,9 +49,6 @@ namespace Fight
             Attacker.ReadyForAttack = true;
         }
 
-        //public override void SetData(IUnitHealth data)
-        //{
-        //    health = data;
-        //}
+       
     }
 }

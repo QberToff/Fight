@@ -51,6 +51,11 @@ namespace Fight
             }
                       
         }
+
+        public void LateUpdate()
+        {
+            return;
+        }
             
     }
 }

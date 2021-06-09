@@ -20,10 +20,15 @@ namespace Fight
                 {
                     el.Update();
                 }  
-            
+                             
+        }
 
-            
-            
+        public void LateUpdate()
+        {
+            foreach (var el in elements)
+            {
+                el.LateUpdate();
+            }
         }
 
 
