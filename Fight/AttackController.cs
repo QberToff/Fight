@@ -49,8 +49,8 @@ namespace Fight
                     }
 
                     undoredo.RegisterCommnad(new Attack(a, b));
-                    Console.WriteLine("     " + a.Name + " is ready for attack " + a.ReadyForAttack);
-                    
+                    Console.WriteLine("         " + a.Name + " is ready for attack " + a.ReadyForAttack);
+                    Console.WriteLine("         " + b.Name + " is ready for attack " + b.ReadyForAttack);
                 }
                 else
                     isFighting = false;
