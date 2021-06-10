@@ -8,14 +8,14 @@ namespace Fight
         {
             Unit FirstUnit = new Unit("First", 20, 200, 5);
             Unit SecondUnit = new Unit("Second", 20, 200, 5);
-            //Unit ThirdtUnit = new Unit("Third", 20, 200, 5);
-            //Unit FourthtUnit = new Unit("Fourth", 20, 200, 5);
+            Unit ThirdtUnit = new Unit("Third", 20, 200, 5);
+            Unit FourthtUnit = new Unit("Fourth", 20, 200, 5);
             Team FirstTeam = new Team("A Team");
             Team SecondTeam = new Team("B Team");
             FirstTeam.AddUnitToTeam(FirstUnit);
             SecondTeam.AddUnitToTeam(SecondUnit);
-            //FirstTeam.AddUnitToTeam(ThirdtUnit);
-            //SecondTeam.AddUnitToTeam(FourthtUnit);
+            FirstTeam.AddUnitToTeam(ThirdtUnit);
+            SecondTeam.AddUnitToTeam(FourthtUnit);
             World world = new World();
             world.AddElement(FirstTeam);
             world.AddElement(SecondTeam);
