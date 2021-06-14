@@ -10,6 +10,8 @@ namespace Fight
 
         public string Name { get; set; }
 
+        public bool HasHit { get; set; }
+
     }
 
     public interface IUnitAttackData

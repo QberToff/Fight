@@ -10,6 +10,9 @@ namespace Fight
         public int Counter { get; set; } = 0;
         public bool Alive { get; set; } = true;
 
+        public bool PossibleToAttack { get; set; } = true;
+
+
         private List<Unit> units = new List<Unit>();
         
         public Team(string name)
@@ -29,6 +32,30 @@ namespace Fight
             return units[index];
         }
 
+        public Unit GetAttackerUnit()
+        {
+            bool _mybool = true;
+            Unit attacker = null;
+
+            while (_mybool)
+            {
+                
+                int rand = new Random().Next(0, units.Count);
+                if (units[rand].ReadyForAttack)
+                {
+
+                    attacker = units[rand];
+                    _mybool = false;
+                   
+                }
+               
+            }
+            return attacker;
+                
+
+            
+        }
+                
         public void Update()
         {
             int index;
@@ -36,13 +63,26 @@ namespace Fight
             {
                
                 units[i].Update();
-                if(!units[i].Alive)
+               
+
+                if (!units[i].ReadyForAttack)
+                {
+                    PossibleToAttack = false;
+                }
+                else
+                {
+                    PossibleToAttack = true;
+                }
+
+                if (!units[i].Alive)
                 {
                     Counter--;
                     index = i;
                     units.RemoveAt(index);
 
                 }
+
+
             }
 
             if(Counter <= 0)

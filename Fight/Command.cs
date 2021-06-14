@@ -27,18 +27,12 @@ namespace Fight
         }
         public override void Apply()
         {
-            if(Attacker.ReadyForAttack)
-            {
-                Health.Health -= Attacker.Damage;
-                Attacker.ReadyForAttack = false;
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("     " + "Unit " + Attacker.Name  + " attacked unit " + Health.Name );
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("     " + "Unit " + Attacker.Name + " can't attack");
-            }
+            Attacker.ReadyForAttack = false;
+            Health.Health -= Attacker.Damage;            
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("     " + "Unit " + Attacker.Name  + " attacked unit " + Health.Name );
+
+            
             
             
         }

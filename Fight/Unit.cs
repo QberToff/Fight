@@ -17,7 +17,7 @@ namespace Fight
         public bool Alive { get; set; }
 
         public bool ReadyForAttack { get; set; } =  true;
-
+        public bool HasHit { get; set; } = false;
 
         private int frames;
        
