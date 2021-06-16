@@ -54,12 +54,17 @@ namespace Fight
                         Unit b = null;
 
 
-                        if (/*coin == 0 &&*/ FirstTeam.PossibleToAttack) //бьёт юнит первой команды
+                        if (coin == 0) //бьёт юнит первой команды
+                           
                         {
-                            a = FirstTeam.GetAttackerUnit();
-                            b = SecondTeam.GetUnitFromTeam(new Random().Next(0, SecondTeam.Counter));
+                            if (FirstTeam.PossibleToAttack())
+                            {
+                                a = FirstTeam.GetAttackerUnit();
+                                b = SecondTeam.GetUnitFromTeam(new Random().Next(0, SecondTeam.Counter));
+                            }
+                            
                         }
-                        else if (/*coin == 1 &&*/ SecondTeam.PossibleToAttack) //бьёт юнит второй команды
+                        else if (/*coin == 1 &&*/ SecondTeam.PossibleToAttack()) //бьёт юнит второй команды
                         {
                             a = SecondTeam.GetAttackerUnit();
                             b = FirstTeam.GetUnitFromTeam(new Random().Next(0, FirstTeam.Counter));

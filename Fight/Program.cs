@@ -23,7 +23,6 @@ namespace Fight
             AttackController controller = new AttackController(u, FirstTeam, SecondTeam, world);
             controller.ProcessFight();
 
-
             //u.RegisterCommnad(new Attack(SecondUnit, FirstUnit));
 
         }

@@ -10,7 +10,7 @@ namespace Fight
         public int Counter { get; set; } = 0;
         public bool Alive { get; set; } = true;
 
-        public bool PossibleToAttack { get; set; } = true;
+        //public bool PossibleToAttack { get; set; } = true;
 
 
         private List<Unit> units = new List<Unit>();
@@ -48,6 +48,7 @@ namespace Fight
                     _mybool = false;
                    
                 }
+                //else if (units.Count == 1 && units[])
                
             }
             return attacker;
@@ -55,7 +56,32 @@ namespace Fight
 
             
         }
+
+
+        public bool PossibleToAttack()
+        {
+            bool possibleForAttack = true;
+
+
+            for (int i = 0; i <= units.Count - 1; i++)
+            {
+
+
+                if (!units[i].ReadyForAttack)
+                {
+                    possibleForAttack = false;
+                }
+                else
+                {
+                    possibleForAttack = true;
+                    break;
+                }
                 
+
+            }
+
+            return possibleForAttack;
+        }
         public void Update()
         {
             int index;
@@ -63,16 +89,7 @@ namespace Fight
             {
                
                 units[i].Update();
-               
-
-                if (!units[i].ReadyForAttack)
-                {
-                    PossibleToAttack = false;
-                }
-                else
-                {
-                    PossibleToAttack = true;
-                }
+                               
 
                 if (!units[i].Alive)
                 {
