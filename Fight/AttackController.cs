@@ -104,9 +104,9 @@ namespace Fight
 
                         if (a != null && b != null) //проверяем выбраны ли юниты
                         {
-                            undoredo.RegisterCommnad(new Attack(a, b)); 
+                            undoredo.RegisterCommnad(new Attack(a, b)/*, Frames*/); 
                         }
-                        
+                        undoredo.AddToAllCommands(new Attack(a, b), Frames);
                         
                         //Console.WriteLine("         " + a.Name + " is ready for attack " + a.ReadyForAttack);
                         //Console.WriteLine("         " + b.Name + " is ready for attack " + b.ReadyForAttack);

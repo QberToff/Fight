@@ -23,6 +23,22 @@ namespace Fight
             AttackController controller = new AttackController(u, FirstTeam, SecondTeam, world);
             controller.ProcessFight();
 
+
+
+            Console.WriteLine("Enter frame: ");
+            int frame;
+            var input = Console.ReadKey();
+            if(char.IsDigit(input.KeyChar))
+            {
+                frame = int.Parse(input.KeyChar.ToString());
+            }
+            else
+            {
+                frame = -1;
+            }
+            
+            u.GetAttackByFrame(frame);
+
             //u.RegisterCommnad(new Attack(SecondUnit, FirstUnit));
 
         }
