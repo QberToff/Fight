@@ -29,7 +29,7 @@ namespace Fight
             {
                 Console.ForegroundColor = ConsoleColor.Gray;
                 Console.WriteLine("Frame: " + Frames);
-                world.Update();
+                //world.Update();
                 
                 int bigTeamCounter = 0;
 
@@ -48,27 +48,59 @@ namespace Fight
 
                     for (int i = 0; i < bigTeamCounter; i++)
                     {
-                        coin = new Random().Next(0, 2); //рандом для того, кто будет бить, а кто получать удар
+                        
                         
                         Unit a = null;
                         Unit b = null;
 
 
-                        if (coin == 0) //бьёт юнит первой команды
-                           
+                        if (FirstTeam.PossibleToAttack() && SecondTeam.PossibleToAttack())
                         {
-                            if (FirstTeam.PossibleToAttack())
+                            coin = new Random().Next(0, 2); //рандом для того, кто будет бить, а кто получать удар
+                            if (coin == 1)
                             {
                                 a = FirstTeam.GetAttackerUnit();
                                 b = SecondTeam.GetUnitFromTeam(new Random().Next(0, SecondTeam.Counter));
                             }
-                            
+                            else
+                            {
+                                a = SecondTeam.GetAttackerUnit();
+                                b = FirstTeam.GetUnitFromTeam(new Random().Next(0, FirstTeam.Counter));
+                            }
+
                         }
-                        else if (/*coin == 1 &&*/ SecondTeam.PossibleToAttack()) //бьёт юнит второй команды
+                        else if (FirstTeam.PossibleToAttack() && !SecondTeam.PossibleToAttack())
+                        {
+                            a = FirstTeam.GetAttackerUnit();
+                            b = SecondTeam.GetUnitFromTeam(new Random().Next(0, SecondTeam.Counter));
+                        }
+                        else if (!FirstTeam.PossibleToAttack() && SecondTeam.PossibleToAttack())
                         {
                             a = SecondTeam.GetAttackerUnit();
                             b = FirstTeam.GetUnitFromTeam(new Random().Next(0, FirstTeam.Counter));
                         }
+                        //else
+                        //{
+                        //    return;
+                        //}
+                            
+
+
+                            //бьёт юнит первой команды
+                           
+                        //{
+                        //    if (FirstTeam.PossibleToAttack())
+                        //    {
+                        //        a = FirstTeam.GetAttackerUnit();
+                        //        b = SecondTeam.GetUnitFromTeam(new Random().Next(0, SecondTeam.Counter));
+                        //    }
+                            
+                        //}
+                        //else if (/*coin == 1 &&*/ SecondTeam.PossibleToAttack()) //бьёт юнит второй команды
+                        //{
+                        //    a = SecondTeam.GetAttackerUnit();
+                        //    b = FirstTeam.GetUnitFromTeam(new Random().Next(0, FirstTeam.Counter));
+                        //}
 
                         if (a != null && b != null) //проверяем выбраны ли юниты
                         {
@@ -86,7 +118,7 @@ namespace Fight
                    isFighting = false;
 
                 Frames++;
-                //world.Update();
+                world.Update();
                 //frames++;
 
             }
