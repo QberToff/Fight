@@ -22,7 +22,7 @@ namespace Fight
             var u = new UndoRedoImplementation();
             AttackController controller = new AttackController(u, FirstTeam, SecondTeam, world);
             controller.ProcessFight();
-
+            Player player = new Player(u);
 
 
             Console.WriteLine("Enter frame: ");
@@ -36,8 +36,9 @@ namespace Fight
             {
                 frame = -1;
             }
-            
-            u.GetAttackByFrame(frame);
+
+            player.SwitchToFrame(frame);
+            controller.ProcessFight();
 
             //u.RegisterCommnad(new Attack(SecondUnit, FirstUnit));
 
