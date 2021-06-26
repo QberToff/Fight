@@ -33,22 +33,22 @@ namespace Fight
                 {
 
                     cc = allComands[i];
+                    i--;
                     for (int j = 0; j <= cc.Count - 1; j++)
                     {
                         cc[j].Reset();
-
-
-                        //REFACTOR???
-                        foreach (KeyValuePair<int, List<Command>> pair in allComands)
-                        {
-                            if (pair.Value == cc)
-                            {
-                                key = pair.Key;
-                            }
-                            else
-                                return;
-                        }
                     }
+
+                    //REFACTOR???
+                    foreach (KeyValuePair<int, List<Command>> pair in allComands)
+                    {
+                        if (pair.Value == cc)
+                        {
+                            key = pair.Key;
+                        }
+                        
+                    }
+                  
 
                 }
 
